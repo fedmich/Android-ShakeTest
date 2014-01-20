@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:id="@+id/txtShake"
+        android:layout_centerHorizontal="true"
+        android:textSize="120sp"
          />
 
 </RelativeLayout>
