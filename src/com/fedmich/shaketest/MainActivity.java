@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.fedmich.shaketest.ShakeDetectActivity;
 import com.fedmich.shaketest.ShakeDetectActivityListener;
@@ -12,10 +13,16 @@ public class MainActivity extends Activity {
 
 	ShakeDetectActivity shakeDetectActivity;
 	
+	private int num = 0;
+	private TextView txtShake;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        Log.d("Fed", "onCreate");
+        txtShake = (TextView) findViewById(R.id.txtShake);
         
         shakeDetectActivity = new ShakeDetectActivity(this);
         shakeDetectActivity.addListener(
@@ -30,6 +37,11 @@ public class MainActivity extends Activity {
     
     void handleShakeEvent( ){
     	Log.d("Fed", "handShake");
+    	
+    	num += 1;
+    	Log.d("Fed", "handShake");
+    	Log.d("Fed", "" + num);
+    	txtShake.setText( "" + num );
     }
     
     @Override
